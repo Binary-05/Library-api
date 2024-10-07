@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import { bookRouter } from "./routes/book-routes.js";
+import authorRouter from "./routes/author-routes.js";
 
 
 // Connect to databsse
@@ -12,6 +13,7 @@ const app = express();
 
 
 app.use(bookRouter);
+app.use(authorRouter);
 
 // Listening for income request
 app.listen(7979, () => {
