@@ -8,12 +8,12 @@ await mongoose.connect(process.env.MONGO_URI);
 
 
 // Create an express variable
-const liapp = express();
+const app = express();
 
 
-liapp.use(bookRouter);
+app.use(bookRouter);
 
 // Listening for income request
-liapp.listen(7979, () => {
+app.listen(7979, () => {
     console.log("App is listen on port 7979");
 }) 
