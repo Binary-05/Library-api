@@ -1,7 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
-import { bookRouter } from "./routes/admin-routes.js";
+import { bookRouter } from "./routes/book-routes.js";
 
+
+// Connect to databsse
+await mongoose.connect(process.env.MONGO_URI);
 
 
 // Create an express variable
