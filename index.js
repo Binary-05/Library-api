@@ -1,19 +1,27 @@
 import express from "express";
 import mongoose from "mongoose";
-import { bookRouter } from "./routes/book-routes.js";
+import authorRouter from "./routes/author-routes.js";
+import bookRouter from "./routes/book-routes.js";
+import cors from "cors";
 
 
 // Connect to databsse
 await mongoose.connect(process.env.MONGO_URI);
 
 
-// Create an express variable
+// Create an express app
 const app = express();
 
 
-app.use(bookRouter);
+// Use middlewares
+app.use(cors());
+
+
+app.use(bookRouter)
+app.use(authorRouter);
+
 
 // Listening for income request
 app.listen(7979, () => {
-    console.log("App is listen on port 7979");
+    console.log("App is listening on port 7979");
 }) 
