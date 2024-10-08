@@ -54,8 +54,8 @@ export const deleteReview = async (req, res, next) => {
     //
     await ReviewModel.findByIdAndDelete(req.params.id);
     //
-    res.status(201).json("Review deteled!");
+    res.status(201).json("Review deleted!");
   } catch (error) {
-    next(error);
+    next(error);  
   }
 };
