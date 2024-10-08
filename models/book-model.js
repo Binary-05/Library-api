@@ -3,7 +3,7 @@ import { Schema, Types, model } from "mongoose";
 const bookSchema = new Schema({
     title : {
         type: String,
-        required: true
+        // required: true
     },
 
     cover : {
@@ -13,22 +13,22 @@ const bookSchema = new Schema({
     author : {
         type: Types.ObjectId,
         ref: "Author",
-        required: true
+        // required: true
     },
 
     year : {
         type: Number,
-        required: true
+        // required: true
     },
 
     genre : {
         type: Number,
-        required: true
+        // required: true
     },
 
     description : {
         type: String,
-        required: true
+        // required: true
     },
 })
 

@@ -3,64 +3,67 @@ import { BookModel } from "../models/book-model.js";
 export const addBook = async (req, res, next) => {
 
 
-   try {
+  try {
     // Write to database
-    await TodoModel.create(req.body);
-
-     res.status(201).json("Book has been added!");
-   } catch (error) {
+    await BookModel.create(req.body);
+    const newbook = new Book(req.body)
+    const book = await newBooking.save()
+    // Response to request
+    res.status(201).json("Book has been added!");
+  } catch (error) {
     next(error);
-    
-   }
+
+  }
 }
 
 export const getAllBooks = async (req, res, next) => {
 
 
-    try {
+  try {
+    // Fetch books from database
+    const books = await BookModel.find();
+    // Return Response
+    res.status(200).json("All books!");
+  } catch (error) {
+    next(error);
 
-
-        res.status(200).json("All books!");
-    } catch (error) {
-        next(error);
-        
-    }
+  }
 }
 
 export const getBookById = async (req, res, next) => {
 
 
   try {
-    
-      res.status(2001).json("Book found");
+    // Fetch a book for database
+    const books = await BookModel.findById();
+    // Return Response
+    res.status(201).json("Book found");
   } catch (error) {
     next(error);
-    
+
   }
 }
 
 export const updateBook = async (req, res, next) => {
 
 
-    try {
+  try {
+    const books = await BookModel.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    res.status(200).json("Book updated successfully!");
+  } catch (error) {
+    next(error);
 
-
-        res.status(200).json("Book updated successfully!");
-    } catch (error) {
-        next(error);
-        
-    }
+  }
 }
 
 export const deleteBook = async (req, res, next) => {
 
 
-   try {
-
-
-     res.status(200).json("Book has been deleted!");
-   } catch (error) {
+  try {
+    const books = BookModel.findByIdAndDelete(req.params.id);
+    res.status(200).json("Book has been deleted!");
+  } catch (error) {
     next(error)
-    
-   }
+
+  }
 }
