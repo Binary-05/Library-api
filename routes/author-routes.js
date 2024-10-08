@@ -11,9 +11,9 @@ authorRouter.get("/author/:id", getAuthor);
 
 authorRouter.get("/authors", getAllAuthors);
 
-authorRouter.patch("author/:id", updateAuthorInfo);
+authorRouter.patch("/author/:id", updateAuthorInfo);
 
-authorRouter.delete("author/:id", deleteAuthorInfo);
+authorRouter.delete("/author/:id", deleteAuthorInfo);
 
 //
 export default authorRouter
