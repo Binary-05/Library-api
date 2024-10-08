@@ -9,7 +9,7 @@ import cors from "cors";
 await mongoose.connect(process.env.MONGO_URI);
 
 
-// Create an express variable
+// Create an express app
 const app = express();
 
 
