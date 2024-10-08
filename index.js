@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import authorRouter from "./routes/author-routes.js";
 import bookRouter from "./routes/book-routes.js";
 import cors from "cors";
+import reviewRouter from "./routes/review-routes.js";
 
 
 // Connect to databsse
@@ -23,6 +24,7 @@ app.use(express.json())
 
 app.use(bookRouter);
 app.use(authorRouter);
+app.use(reviewRouter);
 
 
 // Listening for income request
