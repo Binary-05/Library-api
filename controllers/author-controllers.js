@@ -38,9 +38,9 @@ export const updateAuthorInfo = async (req, res, next) => {
         const {id, update} = req.body
         //Grab the author id and update
         // 
-        const authorUpdate = await AuthorModel.findByIdAndUpdate(id, update)
+        await AuthorModel.findByIdAndUpdate(id, update)
         //
-        res.status(200).json(authorUpdate)
+        res.status(200).json("Update successful!")
     } catch (error) {
         next(error);
     }
@@ -50,10 +50,10 @@ export const updateAuthorInfo = async (req, res, next) => {
 export const deleteAuthorInfo = async (req, res, next) => {
     try {
         // 
-        const authorDelete = await AuthorModel.findByIdAndDelete(id)
+        await AuthorModel.findByIdAndDelete(id)
         //
-        res.status(200).json(authorDelete)
+        res.status(200).json("Delete successful!")
     } catch (error) {
         next(error);
     }
-}
+}  

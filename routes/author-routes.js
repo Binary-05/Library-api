@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { addAuthor, deleteAuthorInfo, getAllAuthors, getAuthor, updateAuthorInfo } from "../controllers/author-controllers.js";
 
-
 //
 const authorRouter = Router();
 
