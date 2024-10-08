@@ -16,7 +16,7 @@ export const addReview = async (req, res, next) => {
 export const getReviewForBook = async (req, res, next) => {
   try {
     //
-    const review = await ReviewModel.findById(id);
+    const review = await ReviewModel.findById(req.params.id);
     //
     res.status(200).json(review);
   } catch (error) {
@@ -39,10 +39,8 @@ export const getAllReviewsForBook = async (req, res, next) => {
 // Update a review by ID
 export const updateReview = async (req, res, next) => {
  try {
-    //
-     const{id, update} = req.body
      //
-     await ReviewModel.findByIdAndUpdate(id, update)
+     await ReviewModel.findByIdAndUpdate(req.params.id, req.body, { new: true })
      //
      res.status(200).json("Review updated!");
  } catch (error) {
@@ -54,7 +52,7 @@ export const updateReview = async (req, res, next) => {
 export const deleteReview = async (req, res, next) => {
   try {
     //
-    await ReviewModel.findByIdAndDelete(id);
+    await ReviewModel.findByIdAndDelete(req.params.id);
     //
     res.status(201).json("Review deteled!");
   } catch (error) {
