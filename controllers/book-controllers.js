@@ -4,7 +4,8 @@ export const addBook = async (req, res, next) => {
 
 
    try {
-
+    // Write to database
+    await TodoModel.create(req.body);
 
      res.status(201).json("Book has been added!");
    } catch (error) {
