@@ -4,7 +4,7 @@ const authorSchema = new Schema({
 
     name: {
         type: String,
-        required: true
+        // required: true
     },
 
     // lastName: {
@@ -14,7 +14,7 @@ const authorSchema = new Schema({
 
     bio: {
         type: String,
-        required: false
+        // required: false
     }
 })
 
