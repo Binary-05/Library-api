@@ -14,7 +14,7 @@ export const addAuthor = async (req, res, next) => {
 export const getAuthor = async (req, res, next) => {
     try {
         // 
-        const author = await AuthorModel.findById()
+        const author = await AuthorModel.findById(id)
         //
         res.status(200).json(author)
     } catch (error) {
@@ -35,8 +35,10 @@ export const getAllAuthors = async (req, res, next) => {
 
 export const updateAuthorInfo = async (req, res, next) => {
     try {
+        const {id, update} = req.body
+        //Grab the author id and update
         // 
-        const authorUpdate = await AuthorModel.findByIdAndUpdate(req.body)
+        const authorUpdate = await AuthorModel.findByIdAndUpdate(id, update)
         //
         res.status(200).json(authorUpdate)
     } catch (error) {
@@ -48,7 +50,7 @@ export const updateAuthorInfo = async (req, res, next) => {
 export const deleteAuthorInfo = async (req, res, next) => {
     try {
         // 
-        const authorDelete = await AuthorModel.findByIdAndDelete(req.body)
+        const authorDelete = await AuthorModel.findByIdAndDelete(id)
         //
         res.status(200).json(authorDelete)
     } catch (error) {
