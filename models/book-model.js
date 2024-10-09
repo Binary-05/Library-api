@@ -11,24 +11,24 @@ const bookSchema = new Schema({
     },
 
     author : {
-        type: Types.ObjectId,
+        type: String,
         ref: "Author",
-        // required: true
+        required: true
     },
 
     year : {
         type: Number,
-        // required: true
+        required: true
     },
 
     genre : {
         type: String,
-        // required: true
+        required: true
     },
 
     description : {
         type: String,
-        // required: true
+        required: true
     },
 })
 
