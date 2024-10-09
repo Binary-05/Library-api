@@ -6,15 +6,15 @@ import { authorValidationSchema } from "../middleware/validate-author.js";
 const authorRouter = Router();
 
 //
-authorRouter.post("/author", authorValidationSchema, addAuthor);
+authorRouter.post("/authors", authorValidationSchema, addAuthor);
 
-authorRouter.get("/author/:id", getAuthor);
+authorRouter.get("/authors/:id", getAuthor);
 
 authorRouter.get("/authors", getAllAuthors);
 
-authorRouter.patch("/author/:id", authorValidationSchema, updateAuthorInfo);
+authorRouter.patch("/authors/:id", authorValidationSchema, updateAuthorInfo);
 
-authorRouter.delete("/author/:id", deleteAuthorInfo);
+authorRouter.delete("/authors/:id", deleteAuthorInfo);
 
 //
 export default authorRouter
