@@ -1,4 +1,5 @@
 import { AuthorModel } from "../models/author-model.js";
+import { authorValidationSchema } from "../middleware/validate-author.js";
 
 export const addAuthor = async (req, res, next) => {
     try {
