@@ -21,7 +21,7 @@ export const getAllBooks = async (req, res, next) => {
 
   try {
     // Fetch books from database
-    const books = await BookModel.find();
+    const books = await BookModel.find().populate("author");
     // Return Response
     res.status(200).json(books);
   } catch (error) {
@@ -35,7 +35,7 @@ export const getBookById = async (req, res, next) => {
 
   try {
     // Fetch a book for database
-    const book = await BookModel.findById(req.params.id);
+    const book = await BookModel.findById(req.params.id).populate("auhtor");
     // Return Response
     res.status(201).json(book);
   } catch (error) {

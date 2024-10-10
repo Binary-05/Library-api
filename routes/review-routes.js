@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { addReview, deleteReview, getAllReviewsForBook, getReviewForBook, updateReview } from "../controllers/reviews-controllers.js";
-import { reviewValidationSchema } from "../middleware/validate-review.js";
+import { reviewValidationSchema } from "../validators/validate-review.js";
+
 
 
 
