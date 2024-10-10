@@ -37,7 +37,7 @@ export const getBookById = async (req, res, next) => {
     // Fetch a book for database
     const book = await BookModel.findById(req.params.id).populate("auhtor");
     // Return Response
-    res.status(201).json(book);
+    res.status(200).json(book);
   } catch (error) {
     next(error);
 
