@@ -2,8 +2,7 @@ import Joi from "joi";
 
 export const authorValidationSchema = (req, res, next) => {
     const schema = Joi.object({
-        firstName: Joi.string().required(),
-        lastName: Joi.string().required(),
+        author: Joi.string().required(),
         bio: Joi.string().required(),
     });
 
