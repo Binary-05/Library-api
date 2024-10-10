@@ -2,12 +2,7 @@ import { Schema, model } from "mongoose";
 
 const authorSchema = new Schema({
 
-    firstName: {
-        type: String,
-        required: true
-    },
-
-    lastName: {
+    author: {
         type: String,
         required: true
     },
