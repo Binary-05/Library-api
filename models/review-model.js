@@ -13,13 +13,13 @@ const reviewSchema = new Schema({
 
   book: {
     type: Types.ObjectId,
-    ref: "book"
+    ref: "Book"
   },
 
-  user: {
-    type: Types.ObjectId, 
+  // user: {
+  //   type: Types.ObjectId, 
     
-  },
+  // },
 });
 
 export const ReviewModel = model("Review", reviewSchema);

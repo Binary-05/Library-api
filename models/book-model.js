@@ -11,7 +11,7 @@ const bookSchema = new Schema({
     },
 
     author : {
-        type: String,
+        type: Types.ObjectId,
         ref: "Author",
         required: true
     },
@@ -26,10 +26,15 @@ const bookSchema = new Schema({
         required: true
     },
 
+    content : {
+        type: String,
+        required: true
+    },
+
     description : {
         type: String,
         required: true
     },
 })
 
-export const BookModel = model("book", bookSchema);
+export const BookModel = model("Book", bookSchema);
