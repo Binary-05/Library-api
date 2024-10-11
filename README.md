@@ -58,8 +58,7 @@ Rodney Hinson (rodneyhinson22@gmail.com)
 
 # Troubleshooting
 Common Issues
-Error: "Invalid token" - Check that the JSON Web Token is valid and properly formatted
-Error: "Unauthorized" - Check that the user is authenticated and authorized to access the requested resource
+Error: "Bad request" - Check that the right data is sent to the database
 
 # Getting Help
 Open an issue on the GitHub repository
